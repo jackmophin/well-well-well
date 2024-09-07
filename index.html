@@ -1,14 +1,119 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <img src="files/Знімок екрана 2024-09-07 о 21.01.31.png" alt="Screenshot">
-    <video controls autoplay width="600">
-        <source src="files/0907.mp4" type="video/mp4">
-    </video>
-</body>
-</html>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .c {
+    position: relative;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  }
+
+  .c1 {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 150%;
+  }
+
+  .video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .video1 {
+    width: 350vw;
+    height: 450vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 0.3;
+  }
+  .neverloseyourhtml {
+      background-image: url('files/html.png');
+      width: 187px;
+      height: 183px;
+      position: fixed;
+      animation: size 1s ease-in-out forwards;
+      animation-delay: 1s;
+        }
+    .based {
+      background-image: url('files/based.png');
+      width: 873px;
+      height: 987px;
+      background-size: cover;
+      position: absolute;
+      transform: scale(0.5) translateY(-20px);
+      opacity: 0;
+      animation: based 1s ease-in-out forwards;
+      animation-delay: 1.5s;
+    }
+.view {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+.text {
+    color: white;
+    font-family: "SUSE", sans-serif;
+    z-index: 5;
+    opacity: 0.3;
+    position: absolute;
+    bottom: 0;
+    font-size: 10px;
+}
+        @keyframes size {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(0.5) translateY(355px);
+            }
+        }
+        @keyframes based {
+            from {
+                transform: scale(0.4) translateY(-250px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(0.32) translateY(-250px);
+            }
+        }
+</style>
+<div class='c'>
+  <video class='video' autoplay src='files/0907.mp4'></video>
+  <div class='view'>
+      <div class='based'></div>
+      <p class='text'>Made By Jack Morphin (Github)</p>
+  </div>
+</div>
+<div class='c1'>
+  <video class='video1' autoplay src='files/0907.mp4'></video>
+</div>
+<div class='neverloseyourhtml'></div>
+<script>
+  const audio = new Audio();
+  audio.src = 'files/basedsound.mp3';
+  audio.play();
+  setTimeout(() => {
+    audio.pause();
+  }, 14000);
+</script>
